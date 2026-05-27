@@ -51,13 +51,15 @@ if run_button:
     with st.spinner("Agents are scouring benchmarks, thermal limits, and bottleneck data..."):
         try:
             # 1. Setup the Brain & Tools
+            # This securely pulls the values from the Streamlit Cloud "Secrets" box
             os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
             os.environ["SERPER_API_KEY"] = st.secrets["SERPER_API_KEY"]
 
+            # Now initialize the LLM using those same secrets
             google_llm = LLM(
                 model="gemini/gemini-2.5-flash",
                 api_key=st.secrets["GEMINI_API_KEY"]
-            )
+)
             
             search_tool = SerperDevTool()
 
