@@ -53,7 +53,7 @@ if run_button:
             # 1. Setup the Brain & Tools
             os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
             os.environ["SERPER_API_KEY"] = st.secrets["SERPER_API_KEY"]
-            
+
             google_llm = LLM(
                 model="gemini/gemini-2.5-flash",
                 api_key=st.secrets["GEMINI_API_KEY"]
